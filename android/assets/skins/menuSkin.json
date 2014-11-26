@@ -1,0 +1,18 @@
+{
+    "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+         "font": { "file": "fonts/menuFont.fnt", },
+         "broadway64":{"file": "fonts/broadway_black64.fnt",},
+    },
+    "com.badlogic.gdx.graphics.Color": {
+        "white": { "r": 1, "g": 1, "b": 1, "a": 1 },
+        "black": { "r": 0, "g": 0, "b": 0, "a": 1 },
+        "red": { "r": 1, "g": 0, "b": 0, "a": 1 },
+    },
+    "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+        "default": { "font": broadway64, }
+    },
+    "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
+        "default": {  "font": font, "fontColor":black, }
+    },
+
+ }
