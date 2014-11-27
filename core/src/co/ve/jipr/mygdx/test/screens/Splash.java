@@ -34,7 +34,7 @@ public class Splash implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
-		Gdx.app.log(TAG, "...Resizing!");
+		Gdx.app.log(TAG, "..Resizing!");
 	}
 
 	@Override
