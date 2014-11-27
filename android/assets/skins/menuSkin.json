@@ -12,7 +12,7 @@
         "default": { "font": broadway64, }
     },
     "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
-        "default": {  "font": font, "fontColor":black, }
+        "default": {   "up": "button_up" , "down": "button_down", "font": font, "pressedOffsetY": -10, "font": font, "fontColor":black, }
     },
 
  }

@@ -1,4 +1,4 @@
-package com.mygdx.game.screens;
+package co.ve.jipr.mygdx.test.screens;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
@@ -21,8 +21,12 @@ public class Splash implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 1, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 0.1f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		changeScreen();
+	}
+
+	private void changeScreen() {
 		stage.act();
 		stage.draw();
 	}
@@ -37,14 +41,15 @@ public class Splash implements Screen {
 	public void show() {
 		stage.addActor(splashImage);
 
-		splashImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(3.5f), Actions.delay(2), Actions.run(new Runnable() {
+		splashImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(1.5f), Actions.delay(0.5f), Actions.fadeOut(1.5f),
+				Actions.run(new Runnable() {
 
-			@Override
-			public void run() {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+					@Override
+					public void run() {
+						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
 
-			}
-		})));
+					}
+				})));
 	}
 
 	@Override

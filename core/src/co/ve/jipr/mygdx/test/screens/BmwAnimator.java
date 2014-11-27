@@ -1,4 +1,4 @@
-package com.mygdx.game.screens;
+package co.ve.jipr.mygdx.test.screens;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
@@ -6,6 +6,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -20,18 +22,26 @@ public class BmwAnimator implements Screen {
 	private static final String TAG = BmwAnimator.class.getSimpleName();
 
 	private Texture texture = new Texture(Gdx.files.internal("images/ic_launcher.png"));
-	// private Image splashImage = new Image(texture);
 	private Stage stage = new Stage();
 	private Table table = new Table();
 	private Skin skin = new Skin(Gdx.files.internal("skins/menuSkin.json"), new TextureAtlas(Gdx.files.internal("skins/TextureTest.pack")));
 	private TextButton buttonMenu = new TextButton("Menu", skin);
 
+	private SpriteBatch spriteBatch;
+	private BitmapFont font;
+	private CharSequence str = "Hello World!";
+
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		spriteBatch.begin();
 		stage.act();
 		stage.draw();
+		font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+		font.draw(spriteBatch, str, 100, 100);
+		spriteBatch.end();
 	}
 
 	@Override
@@ -42,6 +52,10 @@ public class BmwAnimator implements Screen {
 
 	@Override
 	public void show() {
+
+		spriteBatch = new SpriteBatch();
+		font = new BitmapFont(Gdx.files.internal("fonts/broadway_red64.fnt"), Gdx.files.internal("fonts/broadway_red64.png"), false);
+
 		buttonMenu.addListener(new ClickListener() {
 
 			@Override
@@ -55,7 +69,7 @@ public class BmwAnimator implements Screen {
 
 		// The elements are displayed in the order you add them.
 		// The first appear on top, the last at the bottom.
-		table.add(buttonMenu).size(150, 60).padBottom(20).row();
+		table.add(buttonMenu).size(250, 100).padBottom(20).row();
 		table.top().right();
 		table.setFillParent(true);
 		stage.addActor(table);

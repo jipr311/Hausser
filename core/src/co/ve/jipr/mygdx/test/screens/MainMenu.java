@@ -1,4 +1,4 @@
-package com.mygdx.game.screens;
+package co.ve.jipr.mygdx.test.screens;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
@@ -21,10 +21,11 @@ public class MainMenu implements Screen {
 
 	private Stage stage = new Stage();
 	private Skin skin = new Skin(Gdx.files.internal("skins/menuSkin.json"), new TextureAtlas(Gdx.files.internal("skins/TextureTest.pack")));
+	// skins are here: http://www.clker.com/clipart-white-background-gold-button.html
 	private TextButton buttonAnimate = new TextButton("Animate", skin);
 	private TextButton buttonExit = new TextButton("Exit", skin);
 	private Table table = new Table();
-	private Label title = new Label("OpenGl ANIMATION Demo App", skin);
+	private Label title = new Label("OpenGL Demo App @" + Gdx.graphics.getFramesPerSecond() + "FPS", skin);
 
 	@Override
 	public void render(float delta) {
@@ -61,11 +62,11 @@ public class MainMenu implements Screen {
 		// The elements are displayed in the order you add them.
 		// The first appear on top, the last at the bottom.
 		table.add(title).padBottom(40).row();
-		table.add(buttonAnimate).size(150, 60).padBottom(20).row();
-		table.add(buttonExit).size(150, 60).padBottom(20).row();
-
+		table.add(buttonAnimate).size(250, 100).padBottom(20).row();
+		table.add(buttonExit).size(250, 100).padBottom(20).row();
 		table.setFillParent(true);
 		stage.addActor(table);
+
 
 		Gdx.input.setInputProcessor(stage);
 	}
