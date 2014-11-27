@@ -21,7 +21,7 @@ public class MainMenu implements Screen {
 
 	private Stage stage = new Stage();
 	private Skin skin = new Skin(Gdx.files.internal("skins/menuSkin.json"), new TextureAtlas(Gdx.files.internal("skins/TextureTest.pack")));
-	// skins are here: http://www.clker.com/clipart-white-background-gold-button.html
+	
 	private TextButton buttonAnimate = new TextButton("Animate", skin);
 	private TextButton buttonExit = new TextButton("Exit", skin);
 	private Table table = new Table();
