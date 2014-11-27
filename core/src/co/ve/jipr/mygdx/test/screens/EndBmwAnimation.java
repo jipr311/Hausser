@@ -19,6 +19,7 @@ public class EndBmwAnimation implements Screen {
 		 * Application.LOG_ERROR: logs only error messages.
 		 * Application.LOG_INFO: logs error and normal messages.
 		 */
+
 		Gdx.app.log(TAG, "my informative message");
 		Gdx.app.error(TAG, "my error message");
 		Gdx.app.debug(TAG, "my debug message");
