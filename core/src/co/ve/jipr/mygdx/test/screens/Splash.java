@@ -15,7 +15,8 @@ public class Splash implements Screen {
 
 	private static final String TAG = Splash.class.getSimpleName();
 
-	private Texture texture = new Texture(Gdx.files.internal("images/ic_launcher.png"));
+	private Texture texture = new Texture(Gdx.files.internal("images/germany.png"));
+//	private Texture texture = new Texture(Gdx.files.internal("images/ic_launcher.png"));
 	private Image splashImage = new Image(texture);
 	private Stage stage = new Stage();
 
