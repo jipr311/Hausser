@@ -21,9 +21,9 @@ public class MainMenu implements Screen {
 
 	private Stage stage = new Stage();
 	private Skin skin = new Skin(Gdx.files.internal("skins/menuSkin.json"), new TextureAtlas(Gdx.files.internal("skins/TextureTest.pack")));
-	
-	private TextButton buttonAnimate = new TextButton("Animate", skin);
-	private TextButton buttonExit = new TextButton("Exit", skin);
+
+	private TextButton buttonAnimate = new TextButton("Animate", skin, "white");
+	private TextButton buttonExit = new TextButton("Exit", skin, "white");
 	private Table table = new Table();
 	private Label title = new Label("OpenGL Demo App @" + Gdx.graphics.getFramesPerSecond() + "FPS", skin);
 
@@ -56,7 +56,6 @@ public class MainMenu implements Screen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				Gdx.app.exit();
-				// or System.exit(0);
 			}
 		});
 		// The elements are displayed in the order you add them.

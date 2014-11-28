@@ -15,14 +15,23 @@ public class Splash implements Screen {
 
 	private static final String TAG = Splash.class.getSimpleName();
 
-	private Texture texture = new Texture(Gdx.files.internal("images/germany.png"));
-//	private Texture texture = new Texture(Gdx.files.internal("images/ic_launcher.png"));
-	private Image splashImage = new Image(texture);
+	// private Texture texture = new Texture(Gdx.files.internal("images/ic_launcher.png"));
+	private Texture texture = new Texture(Gdx.files.internal("images/bmw_logo.png"));
+	private Image splashBmwImage = new Image(texture);
+
+	private float screenWidth = Gdx.graphics.getWidth();
+	private float screenHeight = Gdx.graphics.getHeight();
+	private float screenMiddleX = screenWidth / 2;
+	private float screenMiddleY = screenHeight / 2;
+	private float x = screenMiddleX;
+	private float y = screenMiddleY;
+
+
 	private Stage stage = new Stage();
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 0.1f);
+		Gdx.gl.glClearColor(1, 1, 1, 1f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		changeScreen();
 	}
@@ -40,9 +49,12 @@ public class Splash implements Screen {
 
 	@Override
 	public void show() {
-		stage.addActor(splashImage);
+		splashBmwImage.setX(x - splashBmwImage.getWidth() / 2);
+		splashBmwImage.setY(y - splashBmwImage.getHeight() / 2);
 
-		splashImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(1.5f), Actions.delay(0.5f), Actions.fadeOut(1.5f),
+		stage.addActor(splashBmwImage);
+
+		splashBmwImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(0.45f), Actions.delay(0.5f), Actions.fadeOut(1.5f),
 				Actions.run(new Runnable() {
 
 					@Override
